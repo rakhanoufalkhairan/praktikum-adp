@@ -1,0 +1,46 @@
+program rata_rata_ragam_simpanganbaku_limadata;
+const
+ n = 5 ;
+var
+ data1, data2, data3, data4, data5: real;
+ rata_rata : real;
+ a, b, c, d, e, ragam: Real;
+ simpangan_baku:Real ;
+begin
+ WriteLn('Nama : Rakha Noufal Khairan');
+ WriteLn('NoBP : 2310432003');
+ WriteLn('Tugas_ADP_modul_1_shift_4');
+ WriteLn('program menghitung rata-rata,ragam, simpangan baku');
+ WriteLn('Silahkan masukkan nilai dari lima data berikut');
+ WriteLn();
+ Write('Data 1 = ');
+ readln(data1);
+ Write('Data 2 = ');
+ readln(data2);
+ Write('Data 3 = ');
+ readln(data3);
+ Write('Data 4 = ');
+ readln(data4);
+ Write('Data 5 = ');
+ readln(data5);
+ writeln();
+ WriteLn('rata_rata: jumlah data ÷ banyak data');
+ rata_rata:=(data1+data2+data3+data4+data5)/n;
+ WriteLn('rata_rata dari lima data = ',rata_rata:0:3);
+ WriteLn();
+ writeln('menghitung nilai ragam ');
+ a := sqr(data1 - rata_rata);
+ b := sqr(data2 - rata_rata);
+ c := sqr(data3 - rata_rata);
+ d := sqr(data4 - rata_rata);
+ e := sqr(data5 - rata_rata);
+ ragam := (a+b+c+d+e)/n;
+ writeln('ragam:(menghitung nilai kuadrat dari selisih setiap nilai data dengan rata-rata)÷jumlah data');
+ WriteLn('ragam = ', ragam:0:3);
+ writeln();
+ writeln('menghitung nilai simpangan baku');
+ simpangan_baku:= sqrt(ragam);
+ writeln('simpangan baku: √(ragam)');
+ writeln('simpangan baku = ', simpangan_baku:0:3);
+ 
+end.
