@@ -1,0 +1,24 @@
+program volume_bola_dan_luas_permukaan;
+const 
+ phi = 3.14;
+var
+ jari2 , volume , luas_permukaan: real;
+begin
+ WriteLn('Nama : Rakha Noufal Khairan');
+ WriteLn('NoBP : 2310432003');
+ WriteLn('Tugas_ADP_modul_1_shift_4');
+ WriteLn('program menghitung volume bola');
+ WriteLn('program menghitung luas permukaan bola');
+ write('jari2 = ');
+ readln(jari2);
+ volume := 4/3*phi*jari2*jari2*jari2 ;
+ luas_permukaan := 4*phi*jari2*jari2;
+ WriteLn('jari2=r');
+ WriteLn(' π = 3.14');
+ WriteLn('volume = 4/3 × π ×r³');
+ WriteLn('volume = ', volume:0:2);
+ WriteLn('luas_permukaan = 4 × π × r²');
+ WriteLn('luas_permukaan = ',luas_permukaan:0:2);
+ 
+end.
+
