@@ -1,0 +1,82 @@
+program PembelianTiketPesawat;
+
+var
+  nama, jenisKelamin, kotaTujuan, jenisMaskapai: string;
+  umur, jumlahTiket: integer;
+  hargaSatuan, totalHarga: real;
+
+begin
+WriteLn('Nama : Rakha Noufal Khairan');
+WriteLn('NoBP : 2310432003');
+WriteLn('Tugas_ADP_shift_4');
+WriteLn('program pemesanan tiket pesawat');
+writeLn();
+ 
+  writeln('==================================================');
+  writeln('         ===== Input Data Diri =====');
+  writeln('==================================================');
+  write('Nama        : '); readln(nama);
+  write('Umur        : '); readln(umur);
+  write('Jenis Kelamin: '); readln(jenisKelamin);
+
+  writeln;
+  writeln('==================================================');
+  writeln('     ===== Pilihan Tujuan Keberangkatan =====');
+  writeln('==================================================');
+  writeln('1. Jakarta');
+  writeln('2. Surabaya');
+  writeln('3. Bali');
+  writeln('4. Padang ');
+  writeln('5. IKN ');
+  
+  write('Pilih tujuan keberangkatan: '); readln(kotaTujuan);
+  case kotaTujuan of
+    '1': kotaTujuan := 'Jakarta';
+    '2': kotaTujuan := 'Surabaya';
+    '3': kotaTujuan := 'Bali';
+    '4': kotaTujuan := 'Padang';
+    '5': kotaTujuan := 'IKN';
+  end;
+
+  writeln;
+  writeln('==================================================');
+  writeln('      ===== Jenis Maskapai dan Harga =====');
+  writeln('==================================================');
+  writeln('1. Ekonomi - Rp. 500.000');
+  writeln('2. Bisnis - Rp. 1.000.000');
+  writeln('3. First Class - Rp. 2.000.000');
+  write('Pilih jenis maskapai: '); readln(jenisMaskapai);
+  case jenisMaskapai of
+    '1': begin
+           jenisMaskapai := 'Ekonomi';
+           hargaSatuan := 500000;
+         end;
+    '2': begin
+           jenisMaskapai := 'Bisnis';
+           hargaSatuan := 1000000;
+         end;
+    '3': begin
+           jenisMaskapai := 'First Class';
+           hargaSatuan := 2000000;
+         end;
+  end;
+
+  write('Jumlah tiket yang dipesan: '); readln(jumlahTiket);
+
+  totalHarga := hargaSatuan * jumlahTiket;
+  if jumlahTiket > 3 then
+    totalHarga := totalHarga - (totalHarga * 0.25); // Diskon 25%
+
+  writeln;
+  writeln('==================================================');
+  writeln('           ===== Struk Pemesanan =====');
+  writeln('==================================================');
+  writeln('Nama         : ', nama);
+  writeln('Umur         : ', umur);
+  writeln('Jenis Kelamin: ', jenisKelamin);
+  writeln('--------------------------------------------------');
+  writeln('Kota Tujuan  : ', kotaTujuan);
+  writeln('Jenis Maskapai: ', jenisMaskapai);
+  writeln('Jumlah Tiket : ', jumlahTiket);
+  writeln('Total Harga  : Rp.', totalHarga:0:0);
+end.
