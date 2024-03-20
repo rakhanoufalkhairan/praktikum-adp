@@ -1,0 +1,65 @@
+print("==================================================")
+print("         ===== Input Data Diri =====")
+print("==================================================")
+nama = input("Nama        : ")
+umur = int(input("Umur        : "))
+jenis_kelamin = input("Jenis Kelamin: ")
+
+print("\n")
+print("==================================================")
+print("     ===== Pilihan Tujuan Keberangkatan =====")
+print("==================================================")
+print("1. Jakarta")
+print("2. Surabaya")
+print("3. Bali")
+print("4. Padang")
+print("5. IKN")
+kota_tujuan = input("Pilih tujuan keberangkatan: ")
+if kota_tujuan == '1':
+    kota_tujuan = 'Jakarta'
+elif kota_tujuan == '2':
+    kota_tujuan = 'Surabaya'
+elif kota_tujuan == '3':
+    kota_tujuan = 'Bali'
+elif kota_tujuan == '4':
+    kota_tujuan = 'Padang'
+elif kota_tujuan == '5':
+    kota_tujuan = 'IKN'
+
+
+print("\n")
+print("==================================================")
+print("      ===== Jenis Maskapai dan Harga =====")
+print("==================================================")
+print("1. Ekonomi - Rp. 500.000")
+print("2. Bisnis  - Rp. 1.000.000")
+print("3. First Class - Rp. 2.000.000")
+jenis_maskapai = input("Pilih jenis maskapai: ")
+if jenis_maskapai == '1':
+    jenis_maskapai = 'Ekonomi'
+    harga_satuan = 500000
+elif jenis_maskapai == '2':
+    jenis_maskapai = 'Bisnis'
+    harga_satuan = 1000000
+elif jenis_maskapai == '3':
+    jenis_maskapai = 'First Class'
+    harga_satuan = 2000000
+
+jumlah_tiket = int(input("Jumlah tiket yang dipesan: "))
+
+total_harga = harga_satuan * jumlah_tiket
+if jumlah_tiket > 3:
+    total_harga -= total_harga * 0.25  # Diskon 25%
+
+print("\n")
+print("==================================================")
+print("           ===== Struk Pemesanan =====")
+print("==================================================")
+print("Nama         :", nama)
+print("Umur         :", umur)
+print("Jenis Kelamin:", jenis_kelamin)
+print("--------------------------------------------------")
+print("Kota Tujuan  :", kota_tujuan)
+print("Jenis Maskapai:", jenis_maskapai)
+print("Jumlah Tiket :", jumlah_tiket)
+print("Total Harga  : Rp.", int(total_harga))
