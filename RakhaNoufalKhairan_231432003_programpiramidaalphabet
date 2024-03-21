@@ -1,0 +1,46 @@
+program PIRAMIDA_ALPHABET;
+
+uses
+  SysUtils;
+
+procedure CETAK_PIRAMIDA_ALPHABET(rows: Integer);
+var
+  alphabet: String;
+  i, j, k: Integer;
+begin
+  alphabet := 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  for i := 0 to rows - 1 do
+  begin
+
+    for j := 0 to rows - i - 2 do
+      Write(' ');
+
+    for j := 0 to i do
+      Write(alphabet[j + 1]);
+
+    for k := i downto 1 do
+      Write(alphabet[k]);
+
+    Writeln;
+  end;
+end;
+
+var
+  num_rows: Integer;
+begin
+WriteLn('Nama : Rakha Noufal Khairan');
+WriteLn('NoBP : 2310432003');
+WriteLn('Tugas_ADP_shift_4');
+WriteLn('program pola piramida alphabet');
+writeLn();
+
+  Write('Silahkan masukkan jumlah baris piramida alphabet: ');
+  Readln(num_rows);
+  WriteLn();
+  WriteLn('===================================================');
+  Write();
+  CETAK_PIRAMIDA_ALPHABET(num_rows);
+  WriteLn();
+  WriteLn('===================================================');
+end.
