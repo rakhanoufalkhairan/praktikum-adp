@@ -1,0 +1,33 @@
+program pola_perulangan_angka_dan_kata;
+var
+  angka, jumlah, i, j, p, l: integer;
+begin
+WriteLn('===========================');
+WriteLn('Nama : Rakha Noufal Khairan');
+WriteLn('NoBP : 2310432003');
+WriteLn('Tugas_ADP_shift_4');
+WriteLn('program pola DOOR');
+WriteLn('===========================');
+writeLn();
+  angka := 1;
+  jumlah := 0;
+  p := 10;
+  l := 10;
+  for i := 1 to l do
+  begin
+    for j := 1 to p do
+    begin
+      if (angka mod 3 = 0) or (angka mod 5 = 0) then
+      begin
+        write('Door ');
+        jumlah := jumlah + 1;
+      end
+      else
+        write(angka, ' ');
+      angka := angka + 1;
+    end;
+    writeln();
+  end;
+  WriteLn('=======================================');
+  writeln('total DooR yang muncul sebanyak = ', jumlah);
+end.
