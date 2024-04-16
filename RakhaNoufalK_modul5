@@ -1,0 +1,35 @@
+print("============================")
+print("Nama : Rakha Noufal Khairan")
+print("No.BP : 2310432003")
+print("ARRAY PROGRAM")
+print("Tugas ADP shift 4")
+print("============================")
+print()
+
+print("===================================================================")
+def input_array():
+    while True:
+        try:
+            array = list(map(int, input("Masukkan bilangan bulat dari 0 sampai 9, pisahkan dengan spasi: ").split()))
+            if all(0 <= num <= 9 for num in array):
+                return array
+            else:
+                print("Input tidak valid, ulangi masukkan.")
+        except ValueError:
+            print("Input tidak valid, ulangi masukkan.")
+
+def main():
+    array_A = input_array()
+    array_B = input_array()
+
+    unique_A = [num for num in array_A if num not in array_B]
+    unique_B = [num for num in array_B if num not in array_A]
+    common_elements = list(set(array_A) & set(array_B))
+
+    print("Array yang hanya berada di AKU:", unique_A)
+    print("Array yang hanya berada di KAMU:", unique_B)
+    print("Array yang berada diantara KITA:", common_elements)
+
+if __name__ == "__main__":
+    main()
+print("===================================================================")
