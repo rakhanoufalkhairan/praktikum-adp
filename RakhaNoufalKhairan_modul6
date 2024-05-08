@@ -5,45 +5,57 @@ print("ARRAY 2D")
 print("Tugas ADP shift 4")
 print("============================")
 print()
-
-data_barang = [
-    ['BERAS', 10000, 50],
-    ['GULA', 12000, 30],
-    ['MIGOR', 15000, 40],
-    ['SUSU', 20000, 20],
-    ['GAS 3KG', 22000,  25],
-    ['TELUR OMEGA', 8000, 60],
-    ['TEPUNG TERIGU', 9000, 45],
-    ['TEH CELUP', 5000, 12]
+barang = [
+    ["| NAMA BARANG        ",  "BERAS", "GULA", "MIGOR", "SUSU" , "GAS 3KG", "TELUR OMG", "TERIGU", "TEH CLP"],
+    ["| HARGA BARANG       ", 10000, 13000, 14000, 21000, 22000, 17000, 9000, 5000],
+    ["| STOK BARANG        ", 69, 96, 54, 49, 34, 45, 43, 35],
 ]
 
-print("-----------------------------------")
-print("Tabel Harga dan Stok Barang:")
-print("Nama Barang   |   Harga   |   Stok")
-print("-----------------------------------")
-for barang in data_barang:
-    print(f"{barang[0]:<13} |   {barang[1]:<6}   |   {barang[2]:<4}")
-print("-----------------------------------")
+print("======================================================================================================================================")
+for i in range(len(barang[0])):
+    print(f"{barang[0][i]:<12}|", end= " ")
+print()
+print("--------------------------------------------------------------------------------------------------------------------------------------")
+for i in range(len(barang[1])):
+    print(f"{barang[1][i]:<12}|", end= " ")
+print()
+print("--------------------------------------------------------------------------------------------------------------------------------------")
+for i in range(len(barang[2])):
+    print(f"{barang[2][i]:<12}|", end= " ")
+print()
+print("======================================================================================================================================")
 
-keuntungan_terbesar = 0
-nama_terbesar = ''
-for barang in data_barang:
-    keuntungan = barang[1] * barang[2]
-    if keuntungan > keuntungan_terbesar:
-        keuntungan_terbesar = keuntungan
-        nama_terbesar = barang[0]
-print(f"Nama Barang dengan Keuntungan Terbesar: {nama_terbesar}")
+y = []
+for i in range(8):
+    keuntungan = barang[1][i+1] * barang[2][i+1]
+    y.append(keuntungan)
 
-keuntungan_terkecil = float('inf')
-nama_terkecil = ''
-for barang in data_barang:
-    keuntungan = barang[1] * barang[2]
-    if keuntungan < keuntungan_terkecil:
-        keuntungan_terkecil = keuntungan
-        nama_terkecil = barang[0]
-print(f"Nama Barang dengan Keuntungan Terkecil: {nama_terkecil}")
 
 total_keuntungan = 0
-for barang in data_barang:
-    total_keuntungan += barang[1] * barang[2]
-print(f"Total Keuntungan: Rp{total_keuntungan}")
+keuntungan_terbesar = y[0]
+keuntungan_terkecil = y[0]
+barang_max = 0
+barang_min = 0
+
+for i in range (len(y)):
+    keuntungan = y[i]
+    total_keuntungan += keuntungan
+    if keuntungan > keuntungan_terbesar:
+        keuntungan_terbesar = keuntungan
+        barang_max = i
+    if keuntungan < keuntungan_terkecil:
+        keuntungan_terkecil = keuntungan
+        barang_min =i
+    
+
+print()
+print("A. Total Keuntungan Sebesar Rp ", total_keuntungan)
+print()
+print("B. Keuntungan Terbesar")
+print("   1. Barang dengan keuntungan terbesar adalah ", barang[0][barang_max+1])
+print("   2. Besar Keuntungan yang diperoleh :Rp ", keuntungan_terbesar)
+print()
+print("C. Keuntungan Terkecil")
+print("    1. Barang dengan Keuntungan Terkecil adalah ", barang[0][barang_min+1])
+print("    2. Besar Keuntungan yang diperoleh :Rp ", keuntungan_terkecil)
+print()
