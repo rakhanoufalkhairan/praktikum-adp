@@ -1,0 +1,49 @@
+print("============================")
+print("Nama : Rakha Noufal Khairan")
+print("No.BP : 2310432003")
+print("ARRAY 2D")
+print("Tugas ADP shift 4")
+print("============================")
+print()
+
+data_barang = [
+    ['BERAS', 10000, 50],
+    ['GULA', 12000, 30],
+    ['MIGOR', 15000, 40],
+    ['SUSU', 20000, 20],
+    ['GAS 3KG', 22000,  25],
+    ['TELUR OMEGA', 8000, 60],
+    ['TEPUNG TERIGU', 9000, 45],
+    ['TEH CELUP', 5000, 12]
+]
+
+print("Tabel Harga dan Stok Barang:")
+print("------------------------------------")
+print("Nama Barang   |   Harga   |   Stok |")
+print("------------------------------------")
+for barang in data_barang:
+    print(f"{barang[0]:<13} |   {barang[1]:<6}   |   {barang[2]:<4}|")
+print("------------------------------------")
+
+keuntungan_terbesar = 0
+nama_terbesar = ''
+for barang in data_barang:
+    keuntungan = barang[1] * barang[2]
+    if keuntungan > keuntungan_terbesar:
+        keuntungan_terbesar = keuntungan
+        nama_terbesar = barang[0]
+print(f"Nama Barang dengan Keuntungan Terbesar: {nama_terbesar}")
+
+keuntungan_terkecil = float('inf')
+nama_terkecil = ''
+for barang in data_barang:
+    keuntungan = barang[1] * barang[2]
+    if keuntungan < keuntungan_terkecil:
+        keuntungan_terkecil = keuntungan
+        nama_terkecil = barang[0]
+print(f"Nama Barang dengan Keuntungan Terkecil: {nama_terkecil}")
+
+total_keuntungan = 0
+for barang in data_barang:
+    total_keuntungan += barang[1] * barang[2]
+print(f"Total Keuntungan: Rp{total_keuntungan}")
