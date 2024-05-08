@@ -32,7 +32,7 @@ for barang in data_barang:
     if keuntungan > keuntungan_terbesar:
         keuntungan_terbesar = keuntungan
         nama_terbesar = barang[0]
-print(f"\nNama Barang dengan Keuntungan Terbesar: {nama_terbesar}")
+print(f"Nama Barang dengan Keuntungan Terbesar: {nama_terbesar}")
 
 keuntungan_terkecil = float('inf')
 nama_terkecil = ''
