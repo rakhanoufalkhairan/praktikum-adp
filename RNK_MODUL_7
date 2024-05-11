@@ -14,7 +14,7 @@ for i in range(n):
     results.append((kecepatan_awal, percepatan, waktu, kecepatan_akhir, jarak))
 
 print("+----+------------------+---------------+---------+------------------+-------------+")
-print("|  n | Kecepatan awal   | Percepatan    | Waktu   | Kecepatan akhir  |   Jarak     |")
+print("| no | Kecepatan awal   | Percepatan    | Waktu   | Kecepatan akhir  |   Jarak     |")
 print("+----+------------------+---------------+---------+------------------+-------------+")
 for i, result in enumerate(results, start=1):
     kecepatan_awal, percepatan, waktu, kecepatan_akhir, jarak = result
